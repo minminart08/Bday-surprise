@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -198,6 +197,110 @@
 
         }
 
+      #memories {
+    display: none;
+    margin-top: 30px;
+    animation: appear 1s ease;
+    
+          }
+      
+/* SCRAPBOOK LAYOUT */
+
+.scrapbook {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    width: 100%;
+    margin: 30px auto;
+}
+
+/* BIGGER POLAROID FRAME */
+
+.polaroid {
+    background: white;
+
+    padding: 15px 15px 25px;
+
+    width: 230px;
+    max-width: 100%;
+
+    border-radius: 8px;
+
+    box-shadow: 0 8px 20px
+    rgba(77, 139, 190, 0.2);
+
+    transition: 0.3s ease;
+
+    overflow: hidden;
+}
+
+/* BIGGER PICTURES */
+
+.polaroid img {
+    display: block;
+
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 4px;
+}
+
+/* CAPTIONS */
+
+.polaroid p {
+    font-family: cursive;
+    font-size: 16px;
+
+    color: #649DCC;
+
+    margin: 15px 0 0;
+}
+
+/* TILTED PHOTOS */
+
+.polaroid:nth-child(1) {
+    transform: rotate(-4deg);
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(4deg);
+}
+
+.polaroid:nth-child(4) {
+    transform: rotate(-3deg);
+}
+
+/* HOVER EFFECT */
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 2;
+}
+      .music-player {
+    background: #D6ECFF;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.music-player p {
+    color: #649DCC;
+    font-weight: bold;
+}
+
+audio {
+    width: 100%;
+}
     </style>
 
 </head>
@@ -252,6 +355,17 @@
 
             <h2>It's your special day!!</h2>
 
+          <div class="music-player">
+
+    <p>🎵 A little song for you 🎵</p>
+
+    <audio controls loop>
+        <source src="Bongo Cat - Happy Birthday to You (Cover Version) 🎧.m4a" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+
+          </div>
+
             <div class="birthday-message">
 
                 <h3>Dear Kyara 💗</h3>
@@ -262,7 +376,7 @@
                 </p>
 
                 <p>
-                    Anyways, ill always be greatful that youre here,
+                    Anyways, I'll always be grateful that youre here,
                     and you stayed as my friend, sa lahat ng nangyari
                     parang kayo nalang mapagkakatiwalaan ko at di ko
                     alam kung magtitiwala ulit ako the same as i do
@@ -271,7 +385,7 @@
                     So thank you so much, thank you for being born,
                     for being my bff since grade 9, thank you.
 
-                    And Thank you cause i cant thank you enough,
+                    And Thank you cause I cant thank you enough,
                     Love love Kya.
                 </p>
 
@@ -279,7 +393,59 @@
 
                 <p>With love, Minmin ♥</p>
 
+              <button onclick="showMemories()">
+    Open Our Memories 📸
+              </button>
+
             </div>
+          <!-- SCRAPBOOK SECTION -->
+
+<div id="memories">
+
+    <h2 class="scrapbook-title">
+        Our Little Memories ♡
+    </h2>
+
+    <div class="scrapbook">
+
+        <div class="polaroid">
+            <img src="received_4174677229438824.jpeg">
+            <p>Kailan kaya maulit ♡</p>
+        </div>
+
+        <div class="polaroid">
+            <img src="received_1416981153067169.jpeg">
+            <p>Mga panahon na may time pa sa Summer</p>
+        </div>
+
+        <div class="polaroid">
+            <img src="received_1473417627035795.jpeg">
+            <p>Grade 10 momints!!</p>
+        </div>
+
+        <div class="polaroid">
+            <img src="received_797103192524130.jpeg">
+            <p>Mga manugsaka it puno pa :(</p>
+        </div>
+      
+      <div class="polaroid">
+            <img src="received_911372442024578.jpeg">
+            <p>Ispechles♥</p>
+      </div>
+      
+      <div class="polaroid">
+            <img src="received_1429720084633923.jpeg">
+            <p>Patay gutom era</p>
+      </div>
+      
+      <div class="polaroid">
+            <img src="received_1521218139307564.jpeg">
+            <p>Continue shining forever, Lovelove💙</p>
+      </div>
+
+    </div>
+
+</div>
 
         </div>
 
@@ -331,7 +497,7 @@
 
             const isBirthday =
 
-                today.getDate() === 11 &&
+                today.getDate() === 12 &&
 
                 today.getMonth() === 10;
 
@@ -354,11 +520,16 @@
                     "Early mo a! HAHAHA 🎀";
 
             }
+          
 
         }
+      function showMemories() {
+    document.getElementById("memories").style.display = "block";
+      }
 
     </script>
 
 </body>
 
 </html>
+
